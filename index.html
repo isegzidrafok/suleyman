@@ -2,7 +2,6 @@
 <html>
   <head>
 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
     <style>
       body{
         background-color: black;
@@ -13,11 +12,12 @@
       #orta{
         position: absolute;
         padding: 10px;
-        box-shadow: 5px 5px 10px rgba(255, 255, 0, 0.4);
+        box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
         color: yellow;
         border: 0 solid yellow;
         background-color: transparent;
-        font-size: 20px;
+        font-size: 30px;
+        font-weigth: bold;
       }
     </style>
   </head>
@@ -45,10 +45,10 @@
         const suan = new Date();
         const fark = tarih - suan;
         if(fark >= 0){
-          g.textContent = Math.floor(fark/gun) + "gün,";
-          sa.textContent = Math.floor((fark%gun)/saat) + "saat,";
-          dk.textContent = Math.floor(((fark%gun)%saat)/dakika) + "dakika,";
-          sn.textContent = Math.floor((((fark%gun)%saat)%dakika)/saniye) + "saniye kaldı.";
+          g.textContent = Math.floor(fark/gun) + " gün,";
+          sa.textContent = Math.floor((fark%gun)/saat) + " saat,";
+          dk.textContent = Math.floor(((fark%gun)%saat)/dakika) + " dakika,";
+          sn.textContent = Math.floor((((fark%gun)%saat)%dakika)/saniye) + " saniye kaldı.";
         }else{alert("Hatalı");}
       }
       setInterval(function(){
