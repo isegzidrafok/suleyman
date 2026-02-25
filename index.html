@@ -49,15 +49,13 @@
           sa.textContent = Math.floor((fark%gun)/saat) + " saat,";
           dk.textContent = Math.floor(((fark%gun)%saat)/dakika) + " dakika,";
           sn.textContent = Math.floor((((fark%gun)%saat)%dakika)/saniye) + " saniye kaldı.";
+          orta.style.left = ((innerWidth/2)-(orta.getBoundingClientRect().width/2)) + "px";
+      orta.style.top = ((innerHeight/2)-(orta.getBoundingClientRect().height/2)) + "px";
         }else{alert("Hatalı");}
       }
       setInterval(function(){
         zaman();
       }, 1000)
-      setTimout(function(){
-      orta.style.left = ((innerWidth/2)-(orta.getBoundingClientRect().width/2)) + "px";
-      orta.style.top = ((innerHeight/2)-(orta.getBoundingClientRect().height/2)) + "px";
-      },1010)
     </script>
   </body>
 </html>
