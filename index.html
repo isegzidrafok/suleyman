@@ -41,8 +41,6 @@
       const saat = dakika * 60;
       const gun = saat * 24;
       const tarih = new Date("June 14, 2026 00:00:00");
-      orta.style.left = ((innerWidth/2)-(orta.getBoundingClientRect().width/2)) + "px";
-      orta.style.top = ((innerHeight/2)-(orta.getBoundingClientRect().height/2)) + "px";
       function zaman(){
         const suan = new Date();
         const fark = tarih - suan;
@@ -56,6 +54,8 @@
       setInterval(function(){
         zaman();
       }, 1000)
+      orta.style.left = ((innerWidth/2)-(orta.getBoundingClientRect().width/2)) + "px";
+      orta.style.top = ((innerHeight/2)-(orta.getBoundingClientRect().height/2)) + "px";
     </script>
   </body>
 </html>
