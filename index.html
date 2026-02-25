@@ -8,13 +8,52 @@
         background-color: black;
         font-family: arial;
         color: yellow;
+        position: relative;
+      }
+      #orta{
+        position: absolute;
+        padding: 10px;
+        box-shadow: 5px 5px 10px rgba(255, 255, 0, 0.4);
+        color: yellow;
+        border: 0 solid yellow;
+        background-color: transparent;
+        font-size: 20px;
       }
     </style>
   </head>
   <body>
-
+<div id="orta">
+  <p id="g"></p>
+  <p id="sa"></p>
+  <p id="dk"></p>
+  <p id="sn"></p>
+</div>
     <script>
-      
+      const orta = document.getElementById("orta");
+      const g = document.getElementById("g");
+      const sa = document.getElementById("sa");
+      const dk = document.getElementById("dk");
+      const sn = document.getElementById("sn");
+      const saniye = 1000;
+      const dakika = saniye * 60;
+      const saat = dakika * 60;
+      const gun = saat * 24;
+      const tarih = new Date("June 14, 2026 00:00:00");
+      orta.style.left = ((innerWidth/2)-(orta.getBoundingClientRect().width/2)) + "px";
+      orta.style.top = ((innerHeight/2)-(orta.getBoundingClientRect().height/2)) + "px";
+      function zaman(){
+        const suan = new Date();
+        const fark = tarih - suan;
+        if(fark >= 0){
+          g.textContent = Math.floor(fark/gun) + "gün,";
+          sa.textContent = Math.floor((fark%gun)/saat) + "saat,";
+          dk.textContent = Math.floor(((fark%gun)%saat)/dakika) + "dakika,";
+          sn.textContent = Math.floor((((fark%gun)%saat)%dakika)/saniye) + "saniye kaldı.";
+        }else{alert("Hatalı");}
+      }
+      setInterval(function(){
+        zaman();
+      }, 1000)
     </script>
   </body>
 </html>
