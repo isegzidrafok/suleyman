@@ -54,8 +54,10 @@
       setInterval(function(){
         zaman();
       }, 1000)
+      setTimout(function(){
       orta.style.left = ((innerWidth/2)-(orta.getBoundingClientRect().width/2)) + "px";
       orta.style.top = ((innerHeight/2)-(orta.getBoundingClientRect().height/2)) + "px";
+      },1100)
     </script>
   </body>
 </html>
